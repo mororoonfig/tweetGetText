@@ -14,12 +14,12 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
-q = "新卒　やめたい"
+word = "AV"
 count = 10
 
 tweet_list = []
 
-tweets = api.search(q=q, locale="ja", count=count, tweet_mode='extended')
+tweets = api.search(q=word, locale="ja", count=count, tweet_mode='extended')
 for tweet in tweets:
     tweet_list.append([[tweet.user.id, tweet.user.followers_count,
                         tweet.user.friends_count, tweet.user.description],
